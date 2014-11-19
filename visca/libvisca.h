@@ -93,6 +93,13 @@
 
 
 /* Commands/inquiries codes */
+#define VISCA_ICR_THRESHOLD              0x21
+#define VISCA_ICR                        0x01
+#define VISCA_AUTO_ICR                   0x51
+#define VISCA_HIGH_SENSITIVITY           0x5E
+#define VISCA_NOISE_REDUCTION            0x53
+#define VISCA_DEFOG                      0x37
+#define VISCA_WD                         0x3D
 #define VISCA_POWER                      0x00
 #define VISCA_DEVICE_INFO                0x02
 #define VISCA_KEYLOCK                    0x17
@@ -552,6 +559,24 @@ VISCA_API uint32_t
 VISCA_close_serial(VISCAInterface_t *iface);
 
 /* COMMANDS */
+
+VISCA_API uint32_t
+VISCA_set_icr(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t mode);
+
+VISCA_API uint32_t
+VISCA_set_auto_icr(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t mode);
+
+VISCA_API uint32_t
+VISCA_set_high_sensitivity(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t mode);
+
+VISCA_API uint32_t
+VISCA_set_noise_reduction(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t level);
+
+VISCA_API uint32_t
+VISCA_set_defog(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t mode);
+
+VISCA_API uint32_t
+VISCA_set_wide_dynamic_range(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t mode);
 
 VISCA_API uint32_t
 VISCA_set_power(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t power);
