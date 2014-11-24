@@ -93,6 +93,8 @@
 
 
 /* Commands/inquiries codes */
+#define VISCA_TEMPERATURE               0x68
+#define VISCA_HIGH_RESOLUTION           0x52
 #define VISCA_ICR_THRESHOLD              0x21
 #define VISCA_ICR                        0x01
 #define VISCA_AUTO_ICR                   0x51
@@ -561,6 +563,9 @@ VISCA_close_serial(VISCAInterface_t *iface);
 /* COMMANDS */
 
 VISCA_API uint32_t
+VISCA_set_high_resolution_mode(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t mode);
+
+VISCA_API uint32_t
 VISCA_set_icr(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t mode);
 
 VISCA_API uint32_t
@@ -915,6 +920,8 @@ VISCA_API uint32_t
 VISCA_set_spot_ae_position(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t x_position, uint8_t y_position);
 
 /* INQUIRIES */
+VISCA_API uint32_t
+VISCA_get_temperature(VISCAInterface_t *iface, VISCACamera_t *camera, uint16_t *temp);
 
 VISCA_API uint32_t
 VISCA_get_power(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t *power);

@@ -207,6 +207,20 @@ VISCA_get_camera_info(VISCAInterface_t *iface, VISCACamera_t *camera)
 /***********************************/
 
 VISCA_API uint32_t
+VISCA_set_high_resolution_mode(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t mode)
+{
+  VISCAPacket_t packet;
+
+  _VISCA_init_packet(&packet);
+  _VISCA_append_byte(&packet, VISCA_COMMAND);
+  _VISCA_append_byte(&packet, VISCA_CATEGORY_CAMERA1);
+  _VISCA_append_byte(&packet, VISCA_HIGH_RESOLUTION);
+  _VISCA_append_byte(&packet, mode);
+
+  return _VISCA_send_packet_with_reply(iface, camera, &packet);
+}
+
+VISCA_API uint32_t
 VISCA_set_icr(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t mode)
 {
   VISCAPacket_t packet;
@@ -1673,6 +1687,25 @@ VISCA_set_spot_ae_position(VISCAInterface_t *iface, VISCACamera_t *camera, uint8
 /***********************************/
 /*       INQUIRY FUNCTIONS         */
 /***********************************/
+VISCA_API uint32_t
+VISCA_get_temperature(VISCAInterface_t *iface, VISCACamera_t *camera, uint16_t *temp)
+{
+  VISCAPacket_t packet;
+  uint32_t err;
+
+  _VISCA_init_packet(&packet);
+  _VISCA_append_byte(&packet, VISCA_INQUIRY);
+  _VISCA_append_byte(&packet, VISCA_CATEGORY_CAMERA1);
+  _VISCA_append_byte(&packet, VISCA_TEMPERATURE);
+  err=_VISCA_send_packet_with_reply(iface, camera, &packet);
+  if (err!=VISCA_SUCCESS)
+    return err;
+  else {
+    *temp=(iface->ibuf[4]<<4)+iface->ibuf[5];
+    return VISCA_SUCCESS;
+  }
+
+}
 
 VISCA_API uint32_t
 VISCA_get_power(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t *power)
