@@ -1,3 +1,9 @@
+libvisca2 (2.0-33) unstable; urgency=low
+
+  * Updated README.md
+
+ -- Ralf Kaestner <ralf.kaestner@gmail.com>  Tue, 26 May 2015 12:45:00 +0100
+
 libvisca2 (2.0-32) unstable; urgency=low
 
   * ReMake build system port and release distributions

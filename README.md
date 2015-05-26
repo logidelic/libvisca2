@@ -65,13 +65,8 @@ traditional CMake way, you must install ReMake following
 
 #### Installing build dependencies
 
-The build dependencies of this project are available from the standard
-package repositories of recent Ubuntu releases. To install them, simply
-use the command
-
-```
-sudo apt-get install ...
-```
+This project does not have any build dependencies other than the standard
+libraries.
 
 #### Building with CMake
 
