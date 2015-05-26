@@ -1,0 +1,15 @@
+# VISCA USB auto-configuration rules for udev.
+# See udev(7) for syntax.
+# TODO: Fix rules to properly enumerate multiple VISCA devices
+
+# VISCA video device permissions and symlinks
+KERNEL=="video*", ENV{ID_VENDOR_ID}=="04b4", ENV{ID_MODEL_ID}=="01fc", ENV{ID_SERIAL}=="Aivion_Aivion-603-IF", SYMLINK+="visca/video"
+# VISCA serial device permissions and symlinks
+KERNEL=="ttyACM*", ENV{ID_VENDOR_ID}=="04b4", ENV{ID_MODEL_ID}=="01fc", ENV{ID_SERIAL}=="Aivion_Aivion-603-IF", SYMLINK+="visca/serial"
+
+# VISCA video device permissions and symlinks (TWIGA board)
+KERNEL=="video*", ENV{ID_VENDOR_ID}=="04b4", ENV{ID_MODEL_ID}=="00f9", ENV{ID_SERIAL}=="Twiga_TWIGACam", SYMLINK+="visca/video"
+# VISCA kernel module probing (TWIGA board)
+SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="04b4", ENV{ID_MODEL_ID}=="00f9", ENV{ID_SERIAL}=="Twiga_TWIGACam", RUN+="/sbin/modprobe usbserial vendor=0x04b4 product=0x00f9"
+# VISCA serial device permissions and symlinks (TWIGA board)
+KERNEL=="ttyUSB*", ENV{ID_VENDOR_ID}=="04b4", ENV{ID_MODEL_ID}=="00f9", ENV{ID_SERIAL}=="Twiga_TWIGACam", SYMLINK+="visca/serial"

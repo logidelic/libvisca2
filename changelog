@@ -1,0 +1,194 @@
+libvisca2 (2.0-32) unstable; urgency=low
+
+  * ReMake build system port and release distributions
+
+ -- Ralf Kaestner <ralf.kaestner@gmail.com>  Tue, 26 May 2015 12:37:00 +0100
+
+libvisca2 (2.0-31) unstable; urgency=low
+
+  * Removed build files and directories
+
+ -- Ralf Kaestner <ralf.kaestner@gmail.com>  Fri, 22 May 2015 08:17:34 +0100
+
+libvisca2 (2.0-30) unstable; urgency=low
+
+  * added gitignore for build folder
+
+ -- Dominic Jud <dominic.jud@mavt.ethz.ch>  Fri, 09 Jan 2015 10:53:40 +0100
+
+libvisca2 (2.0-29) unstable; urgency=low
+
+  * added high sensitivity mode
+
+ -- Dominic Jud <dominic.jud@mavt.ethz.ch>  Mon, 24 Nov 2014 14:39:39 +0100
+
+libvisca2 (2.0-28) unstable; urgency=low
+
+  * added FCB-EV7100 specific functionality
+
+ -- Dominic Jud <dominic.jud@mavt.ethz.ch>  Wed, 19 Nov 2014 13:54:38 +0100
+
+libvisca2 (2.0-27) unstable; urgency=low
+
+  * fix warning
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 12 May 2011 14:02:32 +0200
+
+libvisca2 (2.0-26) unstable; urgency=low
+
+  * define int16_t as windows type
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 12 May 2011 14:01:38 +0200
+
+libvisca2 (2.0-25) unstable; urgency=low
+
+  * Makes no sense to use uint16_t as the value could be negative
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Wed, 11 May 2011 18:59:12 +0200
+
+libvisca2 (2.0-24) unstable; urgency=low
+
+  * incorporate patches from bug tracker. Fixes at least Sony EVI-D70 pantilt
+    position
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Wed, 11 May 2011 15:24:20 +0200
+
+libvisca2 (2.0-23) unstable; urgency=low
+
+  * Add VISCA_usleep. Remove redundant includes. usleep before setting zoom
+    (hopefully helps windows). rename WIN to VISCA_WIN
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Sat, 23 Apr 2011 18:02:09 +0200
+
+libvisca2 (2.0-22) unstable; urgency=low
+
+  * MingW32 fixes
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 17:48:14 +0200
+
+libvisca2 (2.0-21) unstable; urgency=low
+
+  * MingW32 fixes
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 17:47:13 +0200
+
+libvisca2 (2.0-20) unstable; urgency=low
+
+  * Fixed tests on Windows
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 17:45:10 +0200
+
+libvisca2 (2.0-19) unstable; urgency=low
+
+  * again mingw32
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 11:16:05 +0200
+
+libvisca2 (2.0-18) unstable; urgency=low
+
+  * more mingw32 fixes
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 11:15:20 +0200
+
+libvisca2 (2.0-17) unstable; urgency=low
+
+  * more mingw32 fixes
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 11:14:04 +0200
+
+libvisca2 (2.0-16) unstable; urgency=low
+
+  * lowercase windows.h
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 11:09:45 +0200
+
+libvisca2 (2.0-15) unstable; urgency=low
+
+  * spurious endif
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 11:09:18 +0200
+
+libvisca2 (2.0-14) unstable; urgency=low
+
+  * move win32 defs to one place
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 11:08:42 +0200
+
+libvisca2 (2.0-13) unstable; urgency=low
+
+  * MingW32 doesnt have crtdbg.h
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 11:06:23 +0200
+
+libvisca2 (2.0-12) unstable; urgency=low
+
+  * try to define integers on mingw32
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 11:01:25 +0200
+
+libvisca2 (2.0-11) unstable; urgency=low
+
+  * More MingW32 fixes
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 10:29:45 +0200
+
+libvisca2 (2.0-10) unstable; urgency=low
+
+  * Fix building on MingW32 (François Kooman)
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 10:27:41 +0200
+
+libvisca2 (2.0-9) unstable; urgency=low
+
+  * Fix building on Linux (François Kooman)
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 10:27:05 +0200
+
+libvisca2 (2.0-8) unstable; urgency=low
+
+  * update readme
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 04:04:20 +0200
+
+libvisca2 (2.0-7) unstable; urgency=low
+
+  * Update instructions
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 04:02:46 +0200
+
+libvisca2 (2.0-6) unstable; urgency=low
+
+  * autotools builds are not needed anymore
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 04:01:08 +0200
+
+libvisca2 (2.0-5) unstable; urgency=low
+
+  * Update to 2.0
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 03:59:41 +0200
+
+libvisca2 (1.0.2-4) unstable; urgency=low
+
+  * update readme
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 03:58:42 +0200
+
+libvisca2 (1.0.2-3) unstable; urgency=low
+
+  * Visual studio project files are not needed as CMake takes care of
+    that
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 03:54:43 +0200
+
+libvisca2 (1.0.2-2) unstable; urgency=low
+
+  * Fix pan and tilt
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 03:54:03 +0200
+
+libvisca2 (1.0.2-1) unstable; urgency=low
+
+  * Initial set of improvements. Should compile on Windows using CMake.
+
+ -- Mikko Koppanen <mkoppanen@php.net>  Thu, 21 Apr 2011 03:53:16 +0200

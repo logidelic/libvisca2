@@ -184,7 +184,7 @@ VISCA_unread_bytes(VISCAInterface_t *iface, unsigned char *buffer, uint32_t *buf
   if (bytes>0)
     {
       bytes = (bytes>*buffer_size) ? *buffer_size : bytes;
-      read(iface->port_fd, &buffer, bytes);
+      ssize_t res = read(iface->port_fd, &buffer, bytes);
       *buffer_size = bytes;
       return VISCA_FAILURE;
     }
