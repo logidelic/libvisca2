@@ -269,6 +269,10 @@
 #define   VISCA_PT_DATASCREEN_ON           0x02
 #define   VISCA_PT_DATASCREEN_OFF          0x03
 #define   VISCA_PT_DATASCREEN_ONOFF        0x10
+#define VISCA_MINSHUTTER_ONOFF             0x12
+#define   VISCA_MINSHUTTER_ONOFF_ON        0x02
+#define   VISCA_MINSHUTTER_ONOFF_OFF       0x03
+#define VISCA_MINSHUTTER_LIMIT             0x13
 
 #define VISCA_PT_VIDEOSYSTEM_INQ           0x23
 #define VISCA_PT_MODE_INQ                  0x10
@@ -771,6 +775,12 @@ VISCA_set_auto_exp_mode(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t 
 
 VISCA_API uint32_t
 VISCA_set_slow_shutter_auto(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t power);
+
+VISCA_API uint32_t
+VISCA_set_min_shutter_enabled(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t enabled);
+
+VISCA_API uint32_t
+VISCA_set_min_shutter_limit(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t limit);
 
 VISCA_API uint32_t
 VISCA_set_backlight_comp(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t power);

@@ -1282,6 +1282,45 @@ VISCA_set_slow_shutter_auto(VISCAInterface_t *iface, VISCACamera_t *camera, uint
 }
 
 
+//
+// Min shutter speed - Enable/disable
+//
+VISCA_API uint32_t
+VISCA_set_min_shutter_enabled(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t enabled)
+{
+  VISCAPacket_t packet;
+
+  _VISCA_init_packet(&packet);
+  _VISCA_append_byte(&packet, VISCA_COMMAND);
+  _VISCA_append_byte(&packet, VISCA_CATEGORY_CAMERA1);
+  _VISCA_append_byte(&packet, VISCA_MINSHUTTER_ONOFF);
+  _VISCA_append_byte(&packet, enabled ? VISCA_MINSHUTTER_ONOFF_ON : VISCA_MINSHUTTER_ONOFF_OFF);
+
+  return _VISCA_send_packet_with_reply(iface, camera, &packet);
+}
+
+
+//
+// Min shutter speed - Set limit (applies only if enabled)
+//
+VISCA_API uint32_t
+VISCA_set_min_shutter_limit(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t limit)
+{
+  VISCAPacket_t packet;
+
+  _VISCA_init_packet(&packet);
+  _VISCA_append_byte(&packet, VISCA_COMMAND);
+  _VISCA_append_byte(&packet, VISCA_CATEGORY_CAMERA1);
+  _VISCA_append_byte(&packet, VISCA_MINSHUTTER_LIMIT);
+  _VISCA_append_byte(&packet, 0);
+  _VISCA_append_byte(&packet, 0);
+  _VISCA_append_byte(&packet, (limit & 0xF0) >>  4);
+  _VISCA_append_byte(&packet, (limit & 0x0F));
+  return _VISCA_send_packet_with_reply(iface, camera, &packet);
+}
+
+
+
 VISCA_API uint32_t
 VISCA_set_backlight_comp(VISCAInterface_t *iface, VISCACamera_t *camera, uint8_t power)
 {
