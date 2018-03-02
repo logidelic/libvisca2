@@ -55,17 +55,3 @@ remake_pack_deb(
   DESCRIPTION "documentation"
 )
 
-remake_distribute_deb(
-  DISTRIBUTION precise
-  SECTION libs
-  UPLOAD ppa:kralf/asl
-  DEPENDS remake doxygen pkg-config
-  PASS CMAKE_BUILD_TYPE LIBVISCA2_GIT_REVISION
-)
-remake_distribute_deb(
-  DISTRIBUTION trusty
-  SECTION libs
-  UPLOAD ppa:kralf/asl
-  DEPENDS remake doxygen pkg-config
-  PASS CMAKE_BUILD_TYPE LIBVISCA2_GIT_REVISION
-)
